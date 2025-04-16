@@ -20,3 +20,23 @@ TEST(PasswordTest, single_letter_password)
 	int actual = my_password.count_leading_characters("Z");
 	ASSERT_EQ(1, actual);
 }
+
+TEST(PasswordTest, two_leading_a)
+{
+	Password my_password;
+	ASSERT_EQ(2, my_password.count_leading_characters("aab"));
+}
+
+TEST(PasswordTest, case_sensitive)
+{
+	Password my_password;
+	ASSERT_EQ(1, my_password.count_leading_characters("AaA"));
+}
+
+TEST(PasswordTest, empty_string)
+{
+	Password my_password;
+	ASSERT_EQ(0, my_password.count_leading_characters(""));
+}
+
+
